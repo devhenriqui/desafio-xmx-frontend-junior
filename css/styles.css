@@ -1,0 +1,142 @@
+/* Custom styles and tokens for Tenurima - Desafio Dev XMX */
+
+:root {
+  --color-wine-darkest: #130103;
+  --color-wine-dark: #1f0205;
+  --color-wine-primary: #34040a;
+  --color-wine-mid: #4a0710;
+  --color-wine-card: #5a0c16;
+  --color-coral: #ef4444;
+  --color-coral-dark: #dc2626;
+  --color-cta-green: #22c55e;
+  --color-cta-green-hover: #16a34a;
+  --color-btn-yellow: #facc15;
+  --color-btn-yellow-hover: #eab308;
+  --color-gold: #f59e0b;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-wine-darkest);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-wine-card);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-coral);
+}
+
+/* Dot Pattern Background */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(239, 68, 68, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Hero Background Gradient */
+.bg-hero-gradient {
+  background: radial-gradient(circle at 75% 45%, #580a13 0%, #34040a 45%, #190204 100%);
+}
+
+/* Glassmorphism Cards */
+.glass-card-dark {
+  background: rgba(36, 4, 8, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.glass-pill-dark {
+  background: rgba(45, 5, 10, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  transition: all 0.3s ease;
+}
+.glass-pill-dark:hover {
+  border-color: rgba(239, 68, 68, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.2);
+}
+
+/* Buttons */
+.btn-cta-green {
+  background: linear-gradient(180deg, #2ecc71 0%, #22c55e 50%, #16a34a 100%);
+  box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-cta-green:hover {
+  background: linear-gradient(180deg, #34d399 0%, #16a34a 50%, #15803d 100%);
+  box-shadow: 0 15px 30px -5px rgba(34, 197, 94, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+.btn-cta-green:active {
+  transform: translateY(1px);
+}
+
+.btn-buy-yellow {
+  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  box-shadow: 0 8px 20px -3px rgba(250, 204, 21, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.25s ease;
+}
+.btn-buy-yellow:hover {
+  background: linear-gradient(180deg, #fef9c3 0%, #eab308 50%, #ca8a04 100%);
+  box-shadow: 0 12px 25px -3px rgba(250, 204, 21, 0.65);
+  transform: translateY(-2px);
+}
+.btn-buy-yellow:active {
+  transform: translateY(1px);
+}
+
+/* Infinite Marquee Ribbon */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+.marquee-content {
+  display: flex;
+  animation: marquee-scroll 25s linear infinite;
+}
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pulsing radar aura */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 0.4; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+.radar-ring {
+  animation: pulse-ring 4s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.floating {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+/* Geometric cutouts */
+.hero-bottom-cutout {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 300px) 100%, 300px 100%, 0 calc(100% - 40px));
+}
+
+@media (max-width: 768px) {
+  .hero-bottom-cutout {
+    clip-path: none;
+  }
+}
